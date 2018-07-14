@@ -33,7 +33,7 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">cheb1ord</h1>
-    <p class="refpurpose">This function computes the minimum filter order of a Chebyshev type I filter with the desired response characteristics.</p></div>
+    <p class="refpurpose">Minimum filter order of a digital Chebyshev type I filter with the desired response characteristics.</p></div>
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
@@ -42,27 +42,32 @@
 
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">Wp:</span>
-      <dd><p class="para">scalar or vector of length 2, all elements must be in the range [0,1]</p></dd></dt>
+      <dd><p class="para">scalar or vector of length 2 (passband edge(s)), all elements must be in the range [0,1]</p></dd></dt>
    <dt><span class="term">Ws:</span>
-      <dd><p class="para">scalar or vector of length 2, all elements must be in the range [0,1]</p></dd></dt>
+      <dd><p class="para">scalar or vector of length 2 (stopband edge(s)), all elements must be in the range [0,1]</p></dd></dt>
    <dt><span class="term">Rp:</span>
-      <dd><p class="para">real value</p></dd></dt>
+      <dd><p class="para">passband ripple in dB.</p></dd></dt>
    <dt><span class="term">Rs:</span>
-      <dd><p class="para">real value</p></dd></dt></dl></div>
+      <dd><p class="para">stopband attenuation in dB.</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This is an Octave function.
-This function computes the minimum filter order of a Chebyshev type I filter with the desired response characteristics.
-Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.
-Frequencies are normalized to the Nyquist frequency in the range [0,1].
-Rp is measured in decibels and is the allowable passband ripple and Rs is also measured in decibels and is the minimum attenuation in the stop band.
-If ws&gt;wp then the filter is a low pass filter. If wp&gt;ws, then the filter is a high pass filter.
-If wp and ws are vectors of length 2, then the passband interval is defined by wp and the stopband interval is defined by ws.
-If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.</p></div>
+   <p class="para">This function computes the minimum filter order of a Chebyshev type I filter with the desired response characteristics.</p>
+<p class="para">Stopband frequency ws and passband frequency wp specify the the filter frequency band edges.</p>
+<p class="para">Frequencies are normalized to the Nyquist frequency in the range [0,1].</p>
+<p class="para">Rp is measured in decibels and is the allowable passband ripple and Rs is also measured in decibels and is the minimum attenuation in the stop band.</p>
+<p class="para">If ws&gt;wp then the filter is a low pass filter. If wp&gt;ws, then the filter is a high pass filter.</p>
+<p class="para">If wp and ws are vectors of length 2, then the passband interval is defined by wp and the stopband interval is defined by ws.</p>
+<p class="para">If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">cheb1ord</span><span class="scilabopenclose">(</span><span class="scilabnumber">0.1</span><span class="scilabdefault">,</span><span class="scilabnumber">0.2</span><span class="scilabdefault">,</span><span class="scilaboperator">-</span><span class="scilabnumber">0.3</span><span class="scilabdefault">,</span><span class="scilabnumber">4</span><span class="scilabopenclose">)</span>
-<span class="scilabid">ans</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">2</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">wp</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">0.25</span> <span class="scilabnumber">0.3</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabid">ws</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">0.24</span> <span class="scilabnumber">0.31</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabid">Rp</span> <span class="scilaboperator">=</span> <span class="scilabnumber">3</span><span class="scilabdefault">;</span>
+<span class="scilabid">Rs</span> <span class="scilaboperator">=</span> <span class="scilabnumber">10</span><span class="scilabdefault">;</span>
+<span class="scilabopenclose">[</span><span class="scilabid">n</span><span class="scilabdefault">,</span> <span class="scilabid">w</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">cheb1ord</span><span class="scilabopenclose">(</span><span class="scilabid">wp</span><span class="scilabdefault">,</span> <span class="scilabid">ws</span><span class="scilabdefault">,</span> <span class="scilabid">Rp</span><span class="scilabdefault">,</span> <span class="scilabid">Rs</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Modified by :</h3>
+<ul class="itemizedlist"><li class="member">Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</li></ul></div>
     <br />
 
     <div class="manualnavbar">

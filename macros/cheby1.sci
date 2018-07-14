@@ -26,11 +26,15 @@ function [a, b, c, d] = cheby1 (n, rp, w, varargin)
 
     //Examples
     //[z, p, k]=cheby1(2,6,0.7,"high")
-    //a =
-    //   1   1
-    //b =
-    //  -0.62915 + 0.55372i  -0.62915 - 0.55372i
-    //c =  0.055649
+    // k  =
+    // 
+    //    0.0556491  
+    // p  =
+    // 
+    //  - 0.6291539 + 0.5537247i  - 0.6291539 - 0.5537247i  
+    // z  =
+    // 
+    //    1.    1. 
 
     funcprot(0);
     [nargout nargin] = argn();
@@ -64,7 +68,7 @@ function [a, b, c, d] = cheby1 (n, rp, w, varargin)
             error ("cheby1: expected [high|stop] or [s|z]");
         end
     end
-    
+
     [rows_w columns_w] = size(w);
 
     if (~ ((length (w) <= 2) & (rows_w == 1 | columns_w == 1)))
@@ -96,7 +100,7 @@ function [a, b, c, d] = cheby1 (n, rp, w, varargin)
     pole = exp (1*%i * %pi * [-(n - 1):2:(n - 1)] / (2 * n));
     pole = -sinh (v0) * real (pole) + 1*%i * cosh (v0) * imag (pole);
     zero = [];
-    
+
 
 
     // compensate for amplitude at s=0
@@ -106,17 +110,17 @@ function [a, b, c, d] = cheby1 (n, rp, w, varargin)
     if (modulo (n, 2) == 0)
         gain = gain / 10^(rp / 20);
     end
-    
+
 
     // splane frequency transform
     [zero, pole, gain] = sftrans (zero, pole, gain, w, stop);
-    
+
 
     // Use bilinear transform to convert poles to the z plane
     if (digital)
         [zero, pole, gain] = bilinear (zero, pole, gain, T);
     end
-    
+
     // convert to the correct output form
     if (nargout == 2)
         [a b] = zp2tf(zero, pole, gain);

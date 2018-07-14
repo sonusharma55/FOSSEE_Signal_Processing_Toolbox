@@ -508,6 +508,109 @@ else
 	disp("tf2zp Test failed")
 end
 
+/////////Test case for       sftrans                 //////////
+
+[Sz, Sp, Sg] = sftrans([1 2 3], [4 5 6], 15, 20, %T);
+Sg = round(Sg*10000)/10000;
+Sp = round(Sp*10000)/10000;
+Sz = round(Sz*10000)/10000;
+
+if(Sg == 0.75 & Sp == [5 4 3.3333] & Sz == [20 10 6.6667]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("sftrans Test failed")
+end
+
+/////////Test case for       bilinear                 //////////
+
+[b a] = bilinear ([1 2 3], [4 5 6], 1, 1);
+b = round(b*10000)/10000;
+a = round(a*10000)/10000;
+
+
+if(b == [0 -0.1667 -0.3333 2.5] & a == [1 7.3333 17.6667 14]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("bilinear Test failed")
+end
+
+/////////Test case for       postpad                 //////////
+
+y = postpad([1 2 3], 6);
+
+if(y == [1 2 3 0 0 0 ] ) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("postpad Test failed")
+end
+
+/////////Test case for       buttord                 //////////
+
+[n, Wn] = buttord(40/500, 150/500, 3, 60);
+Wn = round(Wn*10000)/10000;
+
+if(n == 5 & Wn == 0.08) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("buttord Test failed")
+end
+
+/////////Test case for       butter                 //////////
+
+[b a] = butter(4,0.3,"high");
+b = round(b*10000)/10000;
+a = round(a*10000)/10000;
+
+if(b == [0.2754 -1.1017 1.6525 -1.1017 0.2754] & a == [1 -1.5704 1.2756 -0.4844 0.0762]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("butter Test failed")
+end
+
+/////////Test case for       besself                 //////////
+
+[b, a]=besself(2,.3,"high","z");
+b = round(b*10000)/10000;
+a = round(a*10000)/10000;
+
+if(b == [0.4668  -0.9336   0.4668 ] & a == [1.  -0.6913    0.176 ]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("butter Test failed")
+end
+
+/////////Test case for       cheb1ord                 //////////
+
+[n, w]=cheb1ord([0.25 0.3],[0.24 0.31],3,10);
+Wn = round(Wn*10000)/10000;
+
+if(n == 3 & w == [0.25 0.3]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("cheb1ord Test failed")
+end
+
+/////////Test case for       cheby1                 //////////
+
+[z, p, k]=cheby1(2,6,0.7,"high");
+z = round(z*10000)/10000;
+p = round(p*10000)/10000;
+k = round(k*10000)/10000;
+
+if(z == [1 1] & p == [-0.6292+0.5537*%i  -0.6292-0.5537*%i] & k == 0.0556) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("butter Test failed")
+end
+
 /////////////////////////////////////////////
 
 /////////////////////////////////////////////

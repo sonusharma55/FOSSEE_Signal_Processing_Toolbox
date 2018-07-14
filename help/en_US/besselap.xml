@@ -59,17 +59,10 @@ n = 5;
 </refsection>
 
 <refsection>
-
-<title>Original Source :</title>
-<simplelist type="vert">
-<member>Octave-Forge</member>
-    </simplelist>
-
 <title>Modified by :</title>
 <simplelist type="vert">
 <member>Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</member>
     </simplelist>
-
 </refsection>
 
 </refentry>

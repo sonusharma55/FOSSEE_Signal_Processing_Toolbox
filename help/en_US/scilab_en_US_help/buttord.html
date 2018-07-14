@@ -33,7 +33,7 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">buttord</h1>
-    <p class="refpurpose">/This function computes the minimum filter order of a Butterworth filter with the desired response characteristics.</p></div>
+    <p class="refpurpose">Minimum filter order and 3dB cutoff frequency of a digital Butterworth filter with the desired response characteristics.</p></div>
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
@@ -42,30 +42,30 @@
 
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">Wp:</span>
-      <dd><p class="para">scalar or vector of length 2</p></dd></dt>
+      <dd><p class="para">scalar or vector of length 2 (passband edge(s)), elements must be in the range [0,1]</p></dd></dt>
    <dt><span class="term">Ws:</span>
-      <dd><p class="para">scalar or vector of length 2, elements must be in the range [0,1]</p></dd></dt>
+      <dd><p class="para">scalar or vector of length 2 (stopband edge(s)), elements must be in the range [0,1]</p></dd></dt>
    <dt><span class="term">Rp:</span>
-      <dd><p class="para">real or complex value</p></dd></dt>
+      <dd><p class="para">passband ripple in dB.</p></dd></dt>
    <dt><span class="term">Rs:</span>
-      <dd><p class="para">real or complex value</p></dd></dt></dl></div>
+      <dd><p class="para">stopband attenuation in dB.</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This is an Octave function.
-This function computes the minimum filter order of a Butterworth filter with the desired response characteristics.
-The filter frequency band edges are specified by the passband frequency wp and stopband frequency ws.
-Frequencies are normalized to the Nyquist frequency in the range [0,1].
-Rp is measured in decibels and is the allowable passband ripple, and Rs is also in decibels and is the minimum attenuation in the stop band.
-If ws&gt;wp, the filter is a low pass filter. If wp&gt;ws, the filter is a high pass filter.
-If wp and ws are vectors of length 2, then the passband interval is defined by wp the stopband interval is defined by ws.
-If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp the filter is a band-stop or band-reject filter.</p></div>
+   <p class="para">This function computes the minimum filter order of a Butterworth filter with the desired response characteristics.</p>
+<p class="para">The filter frequency band edges are specified by the passband frequency wp and stopband frequency ws.</p>
+<p class="para">Frequencies are normalized to the Nyquist frequency in the range [0,1].</p>
+<p class="para">Rp is measured in decibels and is the allowable passband ripple, and Rs is also in decibels and is the minimum attenuation in the stop band.</p>
+<p class="para">If ws&gt;wp, the filter is a low pass filter. If wp&gt;ws, the filter is a high pass filter.</p>
+<p class="para">If wp and ws are vectors of length 2, then the passband interval is defined by wp the stopband interval is defined by ws.</p>
+<p class="para">If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp the filter is a band-stop or band-reject filter.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">Wp</span> <span class="scilaboperator">=</span> <span class="scilabnumber">40</span><span class="scilaboperator">/</span><span class="scilabnumber">500</span>
-<span class="scilabid">Ws</span> <span class="scilaboperator">=</span> <span class="scilabnumber">150</span><span class="scilaboperator">/</span><span class="scilabnumber">500</span>
-<span class="scilabopenclose">[</span><span class="scilabid">n</span><span class="scilabdefault">,</span> <span class="scilabid">Wn</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">buttord</span><span class="scilabopenclose">(</span><span class="scilabid">Wp</span><span class="scilabdefault">,</span> <span class="scilabid">Ws</span><span class="scilabdefault">,</span> <span class="scilabnumber">3</span><span class="scilabdefault">,</span> <span class="scilabnumber">60</span><span class="scilabopenclose">)</span>
-<span class="scilabid">n</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">5</span>
-<span class="scilabid">Wn</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">0.080038</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">Wp</span> <span class="scilaboperator">=</span> <span class="scilabnumber">40</span><span class="scilaboperator">/</span><span class="scilabnumber">500</span> <span class="scilabdefault">;</span>
+<span class="scilabid">Ws</span> <span class="scilaboperator">=</span> <span class="scilabnumber">150</span><span class="scilaboperator">/</span><span class="scilabnumber">500</span> <span class="scilabdefault">;</span>
+<span class="scilabopenclose">[</span><span class="scilabid">n</span><span class="scilabdefault">,</span> <span class="scilabid">Wn</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">buttord</span><span class="scilabopenclose">(</span><span class="scilabid">Wp</span><span class="scilabdefault">,</span> <span class="scilabid">Ws</span><span class="scilabdefault">,</span> <span class="scilabnumber">3</span><span class="scilabdefault">,</span> <span class="scilabnumber">60</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Modified by :</h3>
+<ul class="itemizedlist"><li class="member">Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</li></ul></div>
     <br />
 
     <div class="manualnavbar">

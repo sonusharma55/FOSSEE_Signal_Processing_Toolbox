@@ -33,43 +33,41 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">cheby1</h1>
-    <p class="refpurpose">This function generates a Chebyshev type I filter with rp dB of passband ripple.</p></div>
+    <p class="refpurpose">Chebyshev type I filter design with rp dB of passband ripple.</p></div>
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
-   <div class="synopsis"><pre><span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">w</span><span class="default">)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">w</span><span class="default">, </span>&#0034;<span class="default">high</span>&#0034;<span class="default">)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, [</span><span class="default">wl</span><span class="default">, </span><span class="default">wh</span><span class="default">])</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, [</span><span class="default">wl</span><span class="default">, </span><span class="default">wh</span><span class="default">], </span>&#0034;<span class="default">stop</span>&#0034;<span class="default">)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">, </span><span class="default">c</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (…)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">, </span><span class="default">c</span><span class="default">, </span><span class="default">d</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (…)</span>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">w</span><span class="default">)</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">w</span><span class="default">, </span>&#0034;<span class="default">high</span>&#0034;<span class="default">)</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, [</span><span class="default">wl</span><span class="default">, </span><span class="default">wh</span><span class="default">])</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, [</span><span class="default">wl</span><span class="default">, </span><span class="default">wh</span><span class="default">], </span>&#0034;<span class="default">stop</span>&#0034;<span class="default">)</span>
+<span class="default">[</span><span class="default">z</span><span class="default">, </span><span class="default">p</span><span class="default">, </span><span class="default">g</span><span class="default">] = </span><span class="functionid">cheby1</span><span class="default"> (…)</span>
 <span class="default">[…] = </span><span class="functionid">cheby1</span><span class="default"> (…, </span>&#0034;<span class="default">s</span>&#0034;<span class="default">)</span></pre></div></div>
 
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">n:</span>
-      <dd><p class="para">positive integer value</p></dd></dt>
+      <dd><p class="para">positive integer value (order of filter)</p></dd></dt>
    <dt><span class="term">rp:</span>
-      <dd><p class="para">non negative scalar value</p></dd></dt>
+      <dd><p class="para">non negative scalar value (passband ripple)</p></dd></dt>
    <dt><span class="term">w:</span>
-      <dd><p class="para">vector, all elements must be in the range [0,1]</p></dd></dt></dl></div>
+      <dd><p class="para">vector, all elements must be in the range [0,1]</p><p class="para">1).Normalised digital cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}</p><p class="para">2).Analog cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This is an Octave function.
-This function generates a Chebyshev type I filter with rp dB of passband ripple.
-The fourth parameter takes in high or low, default value is low. The cutoff is pi*Wc radians.
-[b, a] = cheby1(n, Rp, [Wl, Wh]) indicates a band pass filter with edges pi*Wl and pi*Wh radians.
-[b, a] = cheby1(n, Rp, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.
-[z, p, g] = cheby1(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
-[...] = cheby1(...,’s’) returns a Laplace space filter, w can be larger than 1.
-[a,b,c,d] = cheby1(...) returns state-space matrices.</p></div>
+   <p class="para">This function generates a Chebyshev type I filter with rp dB of passband ripple.</p>
+<p class="para">if second parameter is scalar the fourth parameter takes in high or low, default value is low. The cutoff is pi*Wc radians.</p>
+<p class="para">[b, a] = cheby1(n, Rp, [Wl, Wh]) indicates a band pass filter with edges pi*Wl and pi*Wh radians.</p>
+<p class="para">[b, a] = cheby1(n, Rp, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.</p>
+<p class="para">[z, p, g] = cheby1(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.</p>
+<p class="para">[...] = cheby1(...,’s’) returns a Laplace space filter, w can be larger than 1 rad/sec.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabopenclose">[</span><span class="scilabid">a</span><span class="scilabdefault">,</span><span class="scilabid">b</span><span class="scilabdefault">,</span><span class="scilabid">c</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">cheby1</span><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">6</span><span class="scilabdefault">,</span><span class="scilabnumber">0.7</span><span class="scilabdefault">,</span><span class="scilabstring">&#0034;</span><span class="scilabstring">high</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span>
-<span class="scilabid">a</span> <span class="scilaboperator">=</span>
-<span class="scilabnumber">1</span>   <span class="scilabnumber">1</span>
-<span class="scilabid">b</span> <span class="scilaboperator">=</span>
-<span class="scilaboperator">-</span><span class="scilabnumber">0.62915</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.55372</span><span class="scilabid">i</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.62915</span> <span class="scilaboperator">-</span> <span class="scilabnumber">0.55372</span><span class="scilabid">i</span>
-<span class="scilabid">c</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">0.055649</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">n</span> <span class="scilaboperator">=</span> <span class="scilabnumber">2</span><span class="scilabdefault">;</span>
+<span class="scilabid">rp</span> <span class="scilaboperator">=</span> <span class="scilabnumber">6</span><span class="scilabdefault">;</span>
+<span class="scilabid">w</span> <span class="scilaboperator">=</span> <span class="scilabnumber">0.7</span><span class="scilabdefault">;</span>
+<span class="scilabopenclose">[</span><span class="scilabid">z</span><span class="scilabdefault">,</span> <span class="scilabid">p</span><span class="scilabdefault">,</span> <span class="scilabid">k</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">cheby1</span><span class="scilabopenclose">(</span><span class="scilabid">n</span><span class="scilabdefault">,</span> <span class="scilabid">rp</span><span class="scilabdefault">,</span> <span class="scilabid">w</span><span class="scilabdefault">,</span> <span class="scilabstring">&#0034;</span><span class="scilabstring">high</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Modified by :</h3>
+<ul class="itemizedlist"><li class="member">Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</li></ul></div>
     <br />
 
     <div class="manualnavbar">

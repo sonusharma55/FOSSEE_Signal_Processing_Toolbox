@@ -11,8 +11,8 @@
 // Email: toolbox@scilab.in
 
 function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
-    
-        //Transforms a s-plane filter (Analog) into a z-plane filter (Digital) using Bilinear transformation
+
+    //Transforms a s-plane filter (Analog) into a z-plane filter (Digital) using Bilinear transformation
 
     //Calling Sequence
     // [Zb, Za] = bilinear(Sb, Sa, T)
@@ -40,20 +40,14 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
     //                      T  z+1                    
 
     //Examples
-    //[z p g] = bilinear ([1 2 3], [4 5 6], 1, 1)
+    //[b a] = bilinear ([1 2 3], [4 5 6], 1, 1)
     //Output :
-    //  Number of zeros at infinity =    
+    // a  =
     // 
-    //    1.  
-    // g  =
+    //    1.    7.3333333    17.666667    14.  
+    // b  =
     // 
-    //  - 0.1666667  
-    // p  =
-    // 
-    //  - 3.  - 2.3333333  - 2.  
-    // z  =
-    // 
-    //  - 5.    3.  
+    //    0.  - 0.1666667  - 0.3333333    2.5  
 
     funcprot(0);
     [nargout nargin] = argn();
@@ -79,11 +73,11 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
     //      T z+1
     // ----------------  -------------------------  ------------------------
     Zg = real(Sg * prod((2-Sz*T)/T) / prod((2-Sp*T)/T));
-    
+
     if Zg == 0 & nargout == 3 then
-            error("bilinear: invalid value of gain due to zero(s) at infinity avoid z-p-g form and use tf form ")
+        error("bilinear: invalid value of gain due to zero(s) at infinity avoid z-p-g form and use tf form ")
     end
-    
+
     Zp = (2+Sp*T)./(2-Sp*T);
     if isempty(Sz)
         Zz = -ones(size(Zp));
@@ -101,7 +95,7 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
             end
         end
         Zz = Zz1;
-        
+
         if Zg == 0
             z = %z;
             bi = (2*(z - 1))/(T*(z + 1));
@@ -111,7 +105,7 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
             a = coeff(Hz.den);
             Zg = b($)/a($);
         end
-       
+
         [Zz, Zp] = zp2tf(Zz, Zp, Zg);
         Zz = prepad(Zz, length(Zp));
     end

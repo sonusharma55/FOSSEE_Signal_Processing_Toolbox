@@ -191,6 +191,7 @@
 <tocitem target="polyscale" text="polyscale"/>
 <tocitem target="polystab" text="polystab"/>
 <tocitem target="polyval" text="polyval"/>
+<tocitem target="postpad" text="postpad"/>
 <tocitem target="pow2db" text="pow2db"/>
 <tocitem target="primitive" text="primitive"/>
 <tocitem target="prony" text="prony"/>

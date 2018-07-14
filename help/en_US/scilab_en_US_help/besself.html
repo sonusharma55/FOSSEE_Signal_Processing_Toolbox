@@ -33,35 +33,34 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">besself</h1>
-    <p class="refpurpose">This function generates a Bessel filter.</p></div>
+    <p class="refpurpose">Bessel filter design.</p></div>
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
-   <div class="synopsis"><pre><span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">] = </span><span class="functionid">besself</span><span class="default">(</span><span class="default">n</span><span class="default">, </span><span class="default">w</span><span class="default">)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">] = </span><span class="functionid">besself</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">w</span><span class="default">, </span>&#0034;<span class="default">high</span>&#0034;<span class="default">)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">, </span><span class="default">c</span><span class="default">] = </span><span class="functionid">besself</span><span class="default"> (…)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">, </span><span class="default">c</span><span class="default">, </span><span class="default">d</span><span class="default">] = </span><span class="functionid">besself</span><span class="default"> (…)</span>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">besself</span><span class="default">(</span><span class="default">n</span><span class="default">, </span><span class="default">Wc</span><span class="default">)</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">besself</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">Wc</span><span class="default">, </span>&#0034;<span class="default">high</span>&#0034;<span class="default">)</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">besself</span><span class="default"> (</span><span class="default">n</span><span class="default">, [</span><span class="default">Wl</span><span class="default">, </span><span class="default">Wh</span><span class="default">])</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">besself</span><span class="default"> (</span><span class="default">n</span><span class="default">, [</span><span class="default">Wl</span><span class="default">, </span><span class="default">Wh</span><span class="default">], </span>&#0034;<span class="default">stop</span>&#0034;<span class="default">)</span>
+<span class="default">[</span><span class="default">z</span><span class="default">, </span><span class="default">p</span><span class="default">, </span><span class="default">g</span><span class="default">] = </span><span class="functionid">besself</span><span class="default"> (…)</span>
 <span class="default">[…] = </span><span class="functionid">besself</span><span class="default"> (…, </span>&#0034;<span class="default">z</span>&#0034;<span class="default">)</span></pre></div></div>
 
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">n:</span>
-      <dd><p class="para">positive integer value</p></dd></dt>
-   <dt><span class="term">w:</span>
-      <dd><p class="para">positive real value</p></dd></dt></dl></div>
+      <dd><p class="para">positive integer value (order of filter)</p></dd></dt>
+   <dt><span class="term">W:</span>
+      <dd><p class="para">positive real value</p><p class="para">1).Analog cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}</p><p class="para">2).Normalised digital cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This is an Octave function.
-This function generates a Bessel filter. The default is a Laplace space (s) filter.
-The third parameter takes in high or low, the default value being low. The cutoff is pi*Wc radians.
-[z,p,g] = besself(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.
-[...] = besself(...,’z’) returns a discrete space (Z) filter. w must be less than 1.
-[a,b,c,d] = besself(...) returns state-space matrices.</p></div>
+   <p class="para">This function generates a Bessel filter. The default is a Laplace space (s)  or analog filter.</p>
+<p class="para">If second argument is scalar the third parameter takes in high or low, the default value being low. The cutoff is Wc rad/sec.</p>
+<p class="para">If second argument is vector of length 2 ie [Wl Wh] then third parameter may be pass or stop default is pass for bandpass and band reject filter respectively</p>
+<p class="para">[z,p,g] = besself(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.</p>
+<p class="para">[...] = besself(...,’z’) returns a discrete space (Z) filter. Wc must be less than 1 {dimensionless}.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabopenclose">[</span><span class="scilabid">a</span><span class="scilabdefault">,</span><span class="scilabid">b</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">besself</span><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabdefault">,</span><span class="scilabstring">&#0034;</span><span class="scilabstring">low</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span>
-<span class="scilabid">a</span> <span class="scilaboperator">=</span>  <span class="scilabnumber">9.0000</span>
-<span class="scilabid">b</span> <span class="scilaboperator">=</span>
-<span class="scilabnumber">1.0000</span>   <span class="scilabnumber">5.1962</span>   <span class="scilabnumber">9.0000</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">n</span> <span class="scilaboperator">=</span> <span class="scilabnumber">2</span><span class="scilabdefault">;</span>
+<span class="scilabid">w</span> <span class="scilaboperator">=</span> <span class="scilabnumber">0.3</span><span class="scilabdefault">;</span>
+<span class="scilabopenclose">[</span><span class="scilabid">b</span><span class="scilabdefault">,</span> <span class="scilabid">a</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">besself</span><span class="scilabopenclose">(</span><span class="scilabid">n</span><span class="scilabdefault">,</span> <span class="scilabid">w</span><span class="scilabdefault">,</span> <span class="scilabstring">&#0034;</span><span class="scilabstring">high</span><span class="scilabstring">&#0034;</span><span class="scilabdefault">,</span> <span class="scilabstring">&#0034;</span><span class="scilabstring">z</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">

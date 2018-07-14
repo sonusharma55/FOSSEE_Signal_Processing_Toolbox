@@ -18,8 +18,8 @@ function [n, Wc] = buttord(Wp, Ws, Rp, Rs)
     //[n, Wc] = buttord(Wp, Ws, Rp, Rs)
 
     //Parameters 
-    //Wp: scalar or vector of length 2 (passband edge(s) ) elements must be in the range [0,1]
-    //Ws: scalar or vector of length 2, (stopband edge(s) ) elements must be in the range [0,1]
+    //Wp: scalar or vector of length 2 (passband edge(s) ), elements must be in the range [0,1]
+    //Ws: scalar or vector of length 2 (stopband edge(s) ), elements must be in the range [0,1]
     //Rp: passband ripple in dB.
     //Rs: stopband attenuation in dB.
 

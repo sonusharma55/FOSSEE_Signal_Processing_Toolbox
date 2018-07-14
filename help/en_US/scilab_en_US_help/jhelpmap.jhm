@@ -191,6 +191,7 @@
 <mapID target="polyscale" url="polyscale.html"/>
 <mapID target="polystab" url="polystab.html"/>
 <mapID target="polyval" url="polyval.html"/>
+<mapID target="postpad" url="postpad.html"/>
 <mapID target="pow2db" url="pow2db.html"/>
 <mapID target="primitive" url="primitive.html"/>
 <mapID target="prony" url="prony.html"/>

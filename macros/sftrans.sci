@@ -11,7 +11,7 @@
 // Email: toolbox@scilab.in
 
 function [Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)
-    //Transform band edges of a prototype filter (cutoff at W=1) represented in s-plane zero-pole-gain form (Filter Transformation in Analog domain).
+    //Transform band edges of a prototype filter (cutoff at W=1) represented in s-plane zero-pole-gain form (Frequency Transformation in Analog domain).
 
     //Calling Sequence
     //[Sz, Sp, Sg] = sftrans (Sz, Sp, Sg, W, stop)

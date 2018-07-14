@@ -183,6 +183,7 @@ poly2rc
 polyscale
 polystab
 polyval
+postpad
 pow2db
 prepad
 primitive
@@ -262,6 +263,7 @@ unwrap2
 upfirdn
 upsample
 upsamplefill
+validate_filter_bands
 var
 vco
 wconv

@@ -189,6 +189,7 @@
 <!ENTITY a83e8016367fa068071d2b6247d782d7a SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/polyscale.xml">
 <!ENTITY a62b3928c1c708ff7890ce4993976cb59 SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/polystab.xml">
 <!ENTITY aa2b758f4215cb17648cee36c22104575 SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/polyval.xml">
+<!ENTITY ac43d5721327c1429942958766a85259a SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/postpad.xml">
 <!ENTITY ade0eb146e8f1a11cfd96e14505a1927d SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/pow2db.xml">
 <!ENTITY ae7c53104121c0bd59f3dbfb8a50e320f SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/primitive.xml">
 <!ENTITY a1d5001690841a026efe2d732587a410e SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/prony.xml">
@@ -487,6 +488,7 @@
 &a83e8016367fa068071d2b6247d782d7a;
 &a62b3928c1c708ff7890ce4993976cb59;
 &aa2b758f4215cb17648cee36c22104575;
+&ac43d5721327c1429942958766a85259a;
 &ade0eb146e8f1a11cfd96e14505a1927d;
 &ae7c53104121c0bd59f3dbfb8a50e320f;
 &a1d5001690841a026efe2d732587a410e;
