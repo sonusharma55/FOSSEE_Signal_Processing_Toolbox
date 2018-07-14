@@ -2,8 +2,8 @@ function [a, b, c, d] = cheby1 (n, rp, w, varargin)
     //Chebyshev type I filter design with rp dB of passband ripple.
 
     //Calling Sequence
-    //[b, a] = cheby1 (n, rp, w)
-    //[b, a] = cheby1 (n, rp, w, "high")
+    //[b, a] = cheby1 (n, rp, wp)
+    //[b, a] = cheby1 (n, rp, wp, "high")
     //[b, a] = cheby1 (n, rp, [wl, wh])
     //[b, a] = cheby1 (n, rp, [wl, wh], "stop")
     //[z, p, g] = cheby1 (…)
@@ -12,9 +12,9 @@ function [a, b, c, d] = cheby1 (n, rp, w, varargin)
     //Parameters 
     //n: positive integer value (order of filter)
     //rp: non negative scalar value (passband ripple)
-    //w: positive real value, 
-    //    1).Normalised digital cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}
-    //    2).Analog cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}
+    //wp: positive real value, 
+    //    1).Normalised digital passband edge(s) for digital filter, in the range [0, 1] {dimensionless}
+    //    2).Analog passband edge(s) for analog filter, in the range [0, Inf] {rad/sec}
 
     //Description
     //This function generates a Chebyshev type I filter with rp dB of passband ripple.

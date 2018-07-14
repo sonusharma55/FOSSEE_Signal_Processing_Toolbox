@@ -24,8 +24,8 @@
 <refsynopsisdiv>
    <title>Calling Sequence</title>
    <synopsis>
-    [b, a] = cheby1 (n, rp, w)
-    [b, a] = cheby1 (n, rp, w, "high")
+    [b, a] = cheby1 (n, rp, wp)
+    [b, a] = cheby1 (n, rp, wp, "high")
     [b, a] = cheby1 (n, rp, [wl, wh])
     [b, a] = cheby1 (n, rp, [wl, wh], "stop")
     [z, p, g] = cheby1 (…)
@@ -40,8 +40,8 @@
       <listitem><para> positive integer value (order of filter)</para></listitem></varlistentry>
    <varlistentry><term>rp:</term>
       <listitem><para> non negative scalar value (passband ripple)</para></listitem></varlistentry>
-   <varlistentry><term>w:</term>
-      <listitem><para> vector, all elements must be in the range [0,1]</para><para>    1).Normalised digital cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}</para><para>    2).Analog cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}</para></listitem></varlistentry>
+   <varlistentry><term>wp:</term>
+      <listitem><para> vector, all elements must be in the range [0,1]</para><para>    1).Normalised digital passband edge(s) for digital filter, in the range [0, 1] {dimensionless}</para><para>    2).Analog passband edge(s) for analog filter, in the range [0, Inf] {rad/sec}</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
@@ -62,8 +62,8 @@ This function generates a Chebyshev type I filter with rp dB of passband ripple.
    <programlisting role="example"><![CDATA[
 n = 2;
 rp = 6;
-w = 0.7;
-[z, p, k]=cheby1(n, rp, w, "high")
+wp = 0.7;
+[z, p, k]=cheby1(n, rp, wp, "high")
    ]]></programlisting>
 </refsection>
 

@@ -39,7 +39,7 @@
    <varlistentry><term>n:</term>
       <listitem><para> positive integer value (order of filter)</para></listitem></varlistentry>
    <varlistentry><term>W:</term>
-      <listitem><para> positive real value</para><para>    1).Analog cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}</para><para>    2).Normalised digital cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}</para></listitem></varlistentry>
+      <listitem><para> positive real value</para><para>    1).Analog 3dB cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}</para><para>    2).Normalised digital 3dB cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
@@ -58,8 +58,8 @@ This function generates a Bessel filter. The default is a Laplace space (s)  or 
    <title>Examples</title>
    <programlisting role="example"><![CDATA[
 n = 2;
-w = 0.3;
-[b, a]=besself(n, w, "high", "z")
+wc = 0.3;
+[b, a]=besself(n, wc, "high", "z")
 
    ]]></programlisting>
 </refsection>

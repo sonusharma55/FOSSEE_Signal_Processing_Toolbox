@@ -24,9 +24,9 @@ function [a, b, c, d] = besself (n, w, varargin)
 
     //Parameters 
     //n: positive integer value (order of filter)
-    //W: positive real value, 
-    //    1).Analog cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}
-    //    2).Normalised digital cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}
+    //Wc: positive real value, 
+    //    1).Analog 3dB cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}
+    //    2).Normalised digital 3dB cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}
 
     //Description
     //This function generates a Bessel filter. The default is a Laplace space (s)  or analog filter.

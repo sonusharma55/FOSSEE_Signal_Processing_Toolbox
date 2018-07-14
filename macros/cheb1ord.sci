@@ -14,13 +14,15 @@ function [n, Wc] = cheb1ord(Wp, Ws, Rp, Rs)
 
     //Calling Sequence
     //n = cheb1ord(Wp, Ws, Rp, Rs)
-    //[n, Wc] = cheb1ord(Wp, Ws, Rp, Rs)
+    //[n, Wp] = cheb1ord(Wp, Ws, Rp, Rs)
 
     //Parameters 
-    //Wp: scalar or vector of length 2 (passband edge(s) ), all elements must be in the range [0,1]
-    //Ws: scalar or vector of length 2 (stopband edge(s) ), all elements must be in the range [0,1]
+    //Wp: scalar or vector of length 2 (passband edge(s)), all elements must be in the range [0,1]
+    //Ws: scalar or vector of length 2 (stopband edge(s)), all elements must be in the range [0,1]
     //Rp: passband ripple in dB.
     //Rs: stopband attenuation in dB.
+    //n: Minimum filter order satisfying specs
+    //Wp: passband edge(s)
 
     //Description
     //This function computes the minimum filter order of a Chebyshev type I filter with the desired response characteristics. 
@@ -32,8 +34,8 @@ function [n, Wc] = cheb1ord(Wp, Ws, Rp, Rs)
     //If wp is contained within the lower and upper limits of ws, the filter is a band-pass filter. If ws is contained within the lower and upper limits of wp, the filter is a band-stop or band-reject filter.
 
     //Examples
-    //[n, w]=cheb1ord([0.25 0.3],[0.24 0.31],3,10)
-    // w  =
+    //[n, wp]=cheb1ord([0.25 0.3],[0.24 0.31],3,10)
+    // wp  =
     // 
     //    0.25    0.3  
     // n  =

@@ -48,7 +48,7 @@
    <dl><dt><span class="term">n:</span>
       <dd><p class="para">positive integer value (order of filter)</p></dd></dt>
    <dt><span class="term">W:</span>
-      <dd><p class="para">positive real value</p><p class="para">1).Analog cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}</p><p class="para">2).Normalised digital cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}</p></dd></dt></dl></div>
+      <dd><p class="para">positive real value</p><p class="para">1).Analog 3dB cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}</p><p class="para">2).Normalised digital 3dB cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
    <p class="para">This function generates a Bessel filter. The default is a Laplace space (s)  or analog filter.</p>
@@ -59,8 +59,8 @@
 
 <div class="refsection"><h3 class="title">Examples</h3>
    <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">n</span> <span class="scilaboperator">=</span> <span class="scilabnumber">2</span><span class="scilabdefault">;</span>
-<span class="scilabid">w</span> <span class="scilaboperator">=</span> <span class="scilabnumber">0.3</span><span class="scilabdefault">;</span>
-<span class="scilabopenclose">[</span><span class="scilabid">b</span><span class="scilabdefault">,</span> <span class="scilabid">a</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">besself</span><span class="scilabopenclose">(</span><span class="scilabid">n</span><span class="scilabdefault">,</span> <span class="scilabid">w</span><span class="scilabdefault">,</span> <span class="scilabstring">&#0034;</span><span class="scilabstring">high</span><span class="scilabstring">&#0034;</span><span class="scilabdefault">,</span> <span class="scilabstring">&#0034;</span><span class="scilabstring">z</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+<span class="scilabid">wc</span> <span class="scilaboperator">=</span> <span class="scilabnumber">0.3</span><span class="scilabdefault">;</span>
+<span class="scilabopenclose">[</span><span class="scilabid">b</span><span class="scilabdefault">,</span> <span class="scilabid">a</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">besself</span><span class="scilabopenclose">(</span><span class="scilabid">n</span><span class="scilabdefault">,</span> <span class="scilabid">wc</span><span class="scilabdefault">,</span> <span class="scilabstring">&#0034;</span><span class="scilabstring">high</span><span class="scilabstring">&#0034;</span><span class="scilabdefault">,</span> <span class="scilabstring">&#0034;</span><span class="scilabstring">z</span><span class="scilabstring">&#0034;</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">

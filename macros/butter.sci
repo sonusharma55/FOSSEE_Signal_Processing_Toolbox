@@ -23,9 +23,9 @@ function [a, b, c, d] = butter (n, w, varargin)
 
     //Parameters 
     //n: positive integer value (order of filter)
-    //w: positive real value, 
-    //    1).Normalised digital cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}
-    //    2).Analog cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}
+    //wc: positive real value, 
+    //    1).Normalised digital 3dB cutoff frequency/frequencies for digital filter, in the range [0, 1] {dimensionless}
+    //    2).Analog 3dB cutoff frequency/frequencies for analog filter, in the range [0, Inf] {rad/sec}
 
     //Description
     //This function generates a Butterworth filter. Default is a discrete space (z) or digital filter using Bilinear transformation from s to z plane.

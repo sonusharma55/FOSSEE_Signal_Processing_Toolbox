@@ -48,7 +48,11 @@
    <dt><span class="term">Rp:</span>
       <dd><p class="para">passband ripple in dB.</p></dd></dt>
    <dt><span class="term">Rs:</span>
-      <dd><p class="para">stopband attenuation in dB.</p></dd></dt></dl></div>
+      <dd><p class="para">stopband attenuation in dB.</p></dd></dt>
+   <dt><span class="term">n:</span>
+      <dd><p class="para">Minimum filter order satisfying specs.</p></dd></dt>
+   <dt><span class="term">Wc:</span>
+      <dd><p class="para">3dB cutoff frequency/frequencies.</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
    <p class="para">This function computes the minimum filter order of a Butterworth filter with the desired response characteristics.</p>
@@ -62,7 +66,7 @@
 <div class="refsection"><h3 class="title">Examples</h3>
    <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">Wp</span> <span class="scilaboperator">=</span> <span class="scilabnumber">40</span><span class="scilaboperator">/</span><span class="scilabnumber">500</span> <span class="scilabdefault">;</span>
 <span class="scilabid">Ws</span> <span class="scilaboperator">=</span> <span class="scilabnumber">150</span><span class="scilaboperator">/</span><span class="scilabnumber">500</span> <span class="scilabdefault">;</span>
-<span class="scilabopenclose">[</span><span class="scilabid">n</span><span class="scilabdefault">,</span> <span class="scilabid">Wn</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">buttord</span><span class="scilabopenclose">(</span><span class="scilabid">Wp</span><span class="scilabdefault">,</span> <span class="scilabid">Ws</span><span class="scilabdefault">,</span> <span class="scilabnumber">3</span><span class="scilabdefault">,</span> <span class="scilabnumber">60</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+<span class="scilabopenclose">[</span><span class="scilabid">n</span><span class="scilabdefault">,</span> <span class="scilabid">Wc</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">buttord</span><span class="scilabopenclose">(</span><span class="scilabid">Wp</span><span class="scilabdefault">,</span> <span class="scilabid">Ws</span><span class="scilabdefault">,</span> <span class="scilabnumber">3</span><span class="scilabdefault">,</span> <span class="scilabnumber">60</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
 
 <div class="refsection"><h3 class="title">Modified by :</h3>
 <ul class="itemizedlist"><li class="member">Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</li></ul></div>

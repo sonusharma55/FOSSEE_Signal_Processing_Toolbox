@@ -22,6 +22,8 @@ function [n, Wc] = buttord(Wp, Ws, Rp, Rs)
     //Ws: scalar or vector of length 2 (stopband edge(s) ), elements must be in the range [0,1]
     //Rp: passband ripple in dB.
     //Rs: stopband attenuation in dB.
+    //n: Minimum filter order satisfying specs
+    //Wc: 3dB cutoff frequency/frequencies
 
     //Description.
     //This function computes the minimum filter order of a Butterworth filter with the desired response characteristics. 
@@ -35,9 +37,9 @@ function [n, Wc] = buttord(Wp, Ws, Rp, Rs)
     //Examples
     //Wp = 40/500 ;
     //Ws = 150/500 ;
-    //[n, Wn] = buttord(Wp, Ws, 3, 60)
+    //[n, Wc] = buttord(Wp, Ws, 3, 60)
     //Output :
-    // Wn  =
+    // Wc  =
     // 
     //    0.0800376  
     // n  =

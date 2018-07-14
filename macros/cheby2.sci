@@ -1,5 +1,6 @@
 function [a, b, c, d] = cheby2 (n, rs, w, varargin)
-//This function generates a Chebyshev type II filter with rs dB of stopband attenuation.
+//Chebyshev type II filter design with rs dB of stopband attenuation.
+
 //Calling Sequence
 //[a, b] = cheby2 (n, rs, wc)
 //[a, b] = cheby2 (n, rs, wc, "high")

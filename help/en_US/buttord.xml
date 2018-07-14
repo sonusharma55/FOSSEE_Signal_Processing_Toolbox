@@ -40,6 +40,10 @@
       <listitem><para> passband ripple in dB.</para></listitem></varlistentry>
    <varlistentry><term>Rs:</term>
       <listitem><para> stopband attenuation in dB.</para></listitem></varlistentry>
+   <varlistentry><term>n:</term>
+      <listitem><para> Minimum filter order satisfying specs.</para></listitem></varlistentry>
+   <varlistentry><term>Wc:</term>
+      <listitem><para> 3dB cutoff frequency/frequencies.</para></listitem></varlistentry>
    </variablelist>
 </refsection>
 
@@ -61,7 +65,7 @@ This function computes the minimum filter order of a Butterworth filter with the
    <programlisting role="example"><![CDATA[
     Wp = 40/500 ;
     Ws = 150/500 ;
-    [n, Wn] = buttord(Wp, Ws, 3, 60)
+    [n, Wc] = buttord(Wp, Ws, 3, 60)
    ]]></programlisting>
 </refsection>
 
