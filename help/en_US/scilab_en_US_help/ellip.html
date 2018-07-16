@@ -33,43 +33,41 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">ellip</h1>
-    <p class="refpurpose">This function generates an elliptic or Cauer filter with rp dB of passband ripple and rs dB of stopband attenuation.</p></div>
+    <p class="refpurpose">Elliptic/Cauer filter design with rp dB of passband ripple and rs dB of stopband attenuation.</p></div>
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
-   <div class="synopsis"><pre><span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">rs</span><span class="default">, </span><span class="default">wp</span><span class="default">)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">rs</span><span class="default">, </span><span class="default">wp</span><span class="default">, </span>&#0034;<span class="default">high</span>&#0034;<span class="default">)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">rs</span><span class="default">, [</span><span class="default">wl</span><span class="default">, </span><span class="default">wh</span><span class="default">])</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">rs</span><span class="default">, [</span><span class="default">wl</span><span class="default">, </span><span class="default">wh</span><span class="default">], </span>&#0034;<span class="default">stop</span>&#0034;<span class="default">)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">, </span><span class="default">c</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (…)</span>
-<span class="default">[</span><span class="default">a</span><span class="default">, </span><span class="default">b</span><span class="default">, </span><span class="default">c</span><span class="default">, </span><span class="default">d</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (…)</span>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">rs</span><span class="default">, </span><span class="default">wp</span><span class="default">)</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">rs</span><span class="default">, </span><span class="default">wp</span><span class="default">, </span>&#0034;<span class="default">high</span>&#0034;<span class="default">)</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">rs</span><span class="default">, [</span><span class="default">wl</span><span class="default">, </span><span class="default">wh</span><span class="default">])</span>
+<span class="default">[</span><span class="default">b</span><span class="default">, </span><span class="default">a</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (</span><span class="default">n</span><span class="default">, </span><span class="default">rp</span><span class="default">, </span><span class="default">rs</span><span class="default">, [</span><span class="default">wl</span><span class="default">, </span><span class="default">wh</span><span class="default">], </span>&#0034;<span class="default">stop</span>&#0034;<span class="default">)</span>
+<span class="default">[</span><span class="default">z</span><span class="default">, </span><span class="default">p</span><span class="default">, </span><span class="default">g</span><span class="default">] = </span><span class="functionid">ellip</span><span class="default"> (…)</span>
 <span class="default">[…] = </span><span class="functionid">ellip</span><span class="default"> (…, </span>&#0034;<span class="default">s</span>&#0034;<span class="default">)</span></pre></div></div>
 
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">n:</span>
-      <dd><p class="para">positive integer value</p></dd></dt>
+      <dd><p class="para">positive integer value (order of filter)</p></dd></dt>
    <dt><span class="term">rp:</span>
-      <dd><p class="para">non negative scalar value</p></dd></dt>
+      <dd><p class="para">non negative scalar value (passband ripple)</p></dd></dt>
    <dt><span class="term">rs:</span>
-      <dd><p class="para">non negative scalar value</p></dd></dt>
-   <dt><span class="term">w:</span>
-      <dd><p class="para">scalar or vector, all elements should be in the range [0,1]</p></dd></dt></dl></div>
+      <dd><p class="para">non negative scalar value (stopband attenuation)</p></dd></dt>
+   <dt><span class="term">ws:</span>
+      <dd><p class="para">scalar or vector of length 2, all elements should be in the range [0,1]</p><p class="para">1).Normalised digital passband edge(s) for digital filter, in the range [0, 1] {dimensionless}</p><p class="para">2).Analog passband edge(s) for analog filter, in the range [0, Inf] {rad/sec}</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This is an Octave function.
-This function generates an elliptic or Cauer filter with rp dB of passband ripple and rs dB of stopband attenuation.
-[b, a] = ellip(n, Rp, Rs, Wp) indicates low pass filter with order n, Rp decibels of ripple in the passband and a stopband Rs decibels down and cutoff of pi*Wp radians. If the fifth argument is high, then the filter is a high pass filter.
-[b, a] = ellip(n, Rp, Rs, [Wl, Wh]) indictaes band pass filter with band pass edges pi*Wl and pi*Wh. If the fifth argument is stop, the filter is a band reject filter.
-[z, p, g] = ellip(...) returns filter as zero-pole-gain.
-[...] = ellip(...,’s’) returns a Laplace space filter, w can be larger than 1.
-[a, b, c, d] = ellip(...) returns state-space matrices.</p></div>
+   <p class="para">This function generates an elliptic or Cauer filter with rp dB of passband ripple and rs dB of stopband attenuation.</p>
+<p class="para">[b, a] = ellip(n, Rp, Rs, Wp) indicates low pass filter with order n, Rp decibels of ripple in the passband and a stopband Rs decibels down and cutoff of pi*Wp radians. If the fifth argument is high, then the filter is a high pass filter.</p>
+<p class="para">[b, a] = ellip(n, Rp, Rs, [Wl, Wh]) indictaes band pass filter with band pass edges pi*Wl and pi*Wh. If the fifth argument is stop, the filter is a band reject filter.</p>
+<p class="para">[b,a] = ellip(n, Rp, Rs, [Wl, Wh], &#0039;stop&#0039;) band reject filter with edges pi*Wl and pi*Wh</p>
+<p class="para">[z, p, g] = ellip(...) returns filter as zero-pole-gain.</p>
+<p class="para">[...] = ellip(...,’s’) returns a Laplace space filter, wp can be larger than 1 rad/sec.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabopenclose">[</span><span class="scilabid">a</span><span class="scilabdefault">,</span><span class="scilabid">b</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">ellip</span><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span> <span class="scilabnumber">0.5</span><span class="scilabdefault">,</span> <span class="scilabnumber">0.7</span><span class="scilabdefault">,</span> <span class="scilabopenclose">[</span><span class="scilabnumber">0.3</span><span class="scilabdefault">,</span><span class="scilabnumber">0.4</span><span class="scilabopenclose">]</span><span class="scilabopenclose">)</span>
-<span class="scilabid">a</span> <span class="scilaboperator">=</span>
-<span class="scilabnumber">0.88532</span>  <span class="scilaboperator">-</span><span class="scilabnumber">1.58410</span>   <span class="scilabnumber">2.40380</span>  <span class="scilaboperator">-</span><span class="scilabnumber">1.58410</span>   <span class="scilabnumber">0.88532</span>
-<span class="scilabid">b</span> <span class="scilaboperator">=</span>
-<span class="scilabnumber">1.00000</span>  <span class="scilaboperator">-</span><span class="scilabnumber">1.78065</span>   <span class="scilabnumber">2.68703</span>  <span class="scilaboperator">-</span><span class="scilabnumber">1.75725</span>   <span class="scilabnumber">0.97454</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">n</span> <span class="scilaboperator">=</span> <span class="scilabnumber">2</span><span class="scilabdefault">;</span>
+<span class="scilabid">rp</span> <span class="scilaboperator">=</span> <span class="scilabnumber">3</span><span class="scilabdefault">;</span>
+<span class="scilabid">rs</span> <span class="scilaboperator">=</span> <span class="scilabnumber">40</span><span class="scilabdefault">;</span>
+<span class="scilabid">wp</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">0.3</span> <span class="scilabnumber">0.4</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabopenclose">[</span><span class="scilabid">b</span><span class="scilabdefault">,</span> <span class="scilabid">a</span><span class="scilabopenclose">]</span><span class="scilaboperator">=</span><span class="scilabid">ellip</span><span class="scilabopenclose">(</span><span class="scilabid">n</span><span class="scilabdefault">,</span> <span class="scilabid">rp</span><span class="scilabdefault">,</span> <span class="scilabid">rs</span><span class="scilabdefault">,</span> <span class="scilabid">wp</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
     <br />
 
     <div class="manualnavbar">

@@ -49,7 +49,7 @@
    <title>Description</title>
    <para>
 This function generates a Chebyshev type I filter with rp dB of passband ripple.</para>
-<para>if second parameter is scalar the fourth parameter takes in high or low, default value is low. The cutoff is pi*Wc radians.</para>
+<para>if third parameter is scalar the fourth parameter takes in high or low, default value is low. The cutoff is pi*Wc radians.</para>
 <para>[b, a] = cheby1(n, Rp, [Wl, Wh]) indicates a band pass filter with edges pi*Wl and pi*Wh radians.</para>
 <para>[b, a] = cheby1(n, Rp, [Wl, Wh], ’stop’) indicates a band reject filter with edges pi*Wl and pi*Wh radians.</para>
 <para>[z, p, g] = cheby1(...) returns filter as zero-pole-gain rather than coefficients of the numerator and denominator polynomials.</para>

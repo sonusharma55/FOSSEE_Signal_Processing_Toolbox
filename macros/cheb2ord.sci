@@ -1,15 +1,28 @@
+// Copyright (C) 2018 - IIT Bombay - FOSSEE
+//
+// This file must be used under the terms of the CeCILL.
+// This source file is licensed as described in the file COPYING, which
+// you should have received as part of this distribution.  The terms
+// are also available at
+// http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+// Original Source : https://octave.sourceforge.io/signal/
+// Modifieded by:Sonu Sharma, RGIT Mumbai
+// Organization: FOSSEE, IIT Bombay
+// Email: toolbox@scilab.in
+
 function [n, Wc] = cheb2ord(Wp, Ws, Rp, Rs)
     //Minimum filter order of a digital Chebyshev type II filter with the desired response characteristics. 
 
     //Calling Sequence
     //n = cheb2ord(Wp, Ws, Rp, Rs)
-    //[n, Wc] = cheb2ord(Wp, Ws, Rp, Rs)
+    //[n, Ws] = cheb2ord(Wp, Ws, Rp, Rs)
 
     //Parameters 
-    //Wp: scalar or vector of length 2 (passband edge(s) ), all elements must be in the range [0,1]
-    //Ws: scalar or vector of length 2 (stopband edge(s) ), all elements must be in the range [0,1]
+    //Wp: scalar or vector of length 2 (passband edge(s)), all elements must be in the range [0,1]
+    //Ws: scalar or vector of length 2 (stopband edge(s)), all elements must be in the range [0,1]
     //Rp: passband ripple in dB.
     //Rs: stopband attenuation in dB.
+    //n: Minimum order of filter satisfying given specs.
 
     //Description
     //This function computes the minimum filter order of a Chebyshev type II filter with the desired response characteristics. 

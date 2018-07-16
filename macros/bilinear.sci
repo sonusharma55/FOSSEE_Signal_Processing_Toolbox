@@ -78,13 +78,17 @@ function [Zz, Zp, Zg] = bilinear(Sz, Sp, Sg, T)
         error("bilinear: invalid value of gain due to zero(s) at infinity avoid z-p-g form and use tf form ")
     end
 
+
+
     Zp = (2+Sp*T)./(2-Sp*T);
+    SZp = size(Zp);
     if isempty(Sz)
-        Zz = -ones(size(Zp));
+        Zz = -ones(SZp(1), SZp(2));
     else
         Zz = [(2+Sz*T)./(2-Sz*T)];
         Zz = postpad(Zz, p, -1);
     end
+
 
     if nargout==2
         // zero at infinity

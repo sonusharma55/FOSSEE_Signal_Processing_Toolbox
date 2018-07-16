@@ -1,3 +1,15 @@
+// Copyright (C) 2018 - IIT Bombay - FOSSEE
+//
+// This file must be used under the terms of the CeCILL.
+// This source file is licensed as described in the file COPYING, which
+// you should have received as part of this distribution.  The terms
+// are also available at
+// http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt
+// Original Source : https://octave.sourceforge.io/signal/
+// Modifieded by:Sonu Sharma, RGIT Mumbai
+// Organization: FOSSEE, IIT Bombay
+// Email: toolbox@scilab.in
+
 function [a, b, c, d] = cheby1 (n, rp, w, varargin)
     //Chebyshev type I filter design with rp dB of passband ripple.
 
@@ -72,7 +84,7 @@ function [a, b, c, d] = cheby1 (n, rp, w, varargin)
     [rows_w columns_w] = size(w);
 
     if (~ ((length (w) <= 2) & (rows_w == 1 | columns_w == 1)))
-        error ("cheby1: frequency must be given as WC or [WL, WH]");
+        error ("cheby1: frequency must be given as WP or [WL, WH]");
     elseif ((length (w) == 2) & (w(2) <= w(1)))
         error ("cheby1: W(1) must be less than W(2)");
     end

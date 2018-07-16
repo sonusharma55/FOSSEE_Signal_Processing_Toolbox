@@ -582,15 +582,15 @@ if(b == [0.4668  -0.9336   0.4668 ] & a == [1.  -0.6913    0.176 ])
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
-	disp("butter Test failed")
+	disp("besself Test failed")
 end
 
 /////////Test case for       cheb1ord                 //////////
 
-[n, w]=cheb1ord([0.25 0.3],[0.24 0.31],3,10);
+[n, Wn]=cheb1ord([0.25 0.3],[0.24 0.31],3,10);
 Wn = round(Wn*10000)/10000;
 
-if(n == 3 & w == [0.25 0.3]) 
+if(n == 3 & Wn == [0.25 0.3]) 
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
@@ -608,7 +608,66 @@ if(z == [1 1] & p == [-0.6292+0.5537*%i  -0.6292-0.5537*%i] & k == 0.0556)
            test_pass=[test_pass,1]
 else
 	test_pass=[test_pass,0]
-	disp("butter Test failed")
+	disp("cheby1 Test failed")
+end
+
+/////////Test case for       cheb2ord                 //////////
+
+Wp = 40/500;
+Ws = 150/500;
+Rp = 3;
+Rs = 60;
+[n,Ws] = cheb2ord(Wp,Ws,Rp,Rs);
+Ws = round(Ws*10000)/10000;
+
+if(n == 4 & Ws == 0.3) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("cheb2ord Test failed")
+end
+
+/////////Test case for       cheby2                 //////////
+
+[z, p, k]=cheby2(2,5,0.7,"high");
+z = round(z*10000)/10000;
+p = round(p*10000)/10000;
+k = round(k*10000)/10000;
+
+if(z == [-0.3165-0.9486*%i  -0.3165+0.9486*%i ] & p == [-0.3939+0.5314*%i  -0.3939-0.5314*%i ] & k == 0.4753) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("cheby2 Test failed")
+end
+
+/////////Test case for       ellipord                 //////////
+
+Wp = [60 200]/500;
+Ws = [50 250]/500;
+Rp = 3;
+Rs = 40;
+[n,Wp] = ellipord(Wp,Ws,Rp,Rs);
+Wp = round(Wp*10000)/10000;
+
+if(n == 5 & Wp == [0.12 0.4]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("ellipord Test failed")
+end
+
+/////////Test case for       ellip                 //////////
+
+[b, a]=ellip(2, 3, 40, [0.3,0.4]);
+b = round(b*10000)/10000;
+a = round(a*10000)/10000;
+
+if(b == [0.0203  -0.0164    0.0027  -0.0164    0.0203] & a == [1.  -1.7259    2.5097  -1.5593    0.8188 ]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("ellip Test failed")
 end
 
 /////////////////////////////////////////////
