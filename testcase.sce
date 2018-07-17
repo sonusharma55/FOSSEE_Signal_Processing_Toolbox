@@ -670,6 +670,18 @@ else
 	disp("ellip Test failed")
 end
 
+/////////Test case for       wconv                 //////////
+a = [1 2 3 4 5];
+b = [7 8 9 10];
+y = wconv(1,a,b);
+
+if(y == [7.    22.    46.    80.    114.    106.    85.   50.]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("wconv Test failed")
+end
+
 /////////////////////////////////////////////
 
 /////////////////////////////////////////////

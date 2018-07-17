@@ -277,9 +277,7 @@
 <mapID target="window" url="window.html"/>
 <mapID target="wkeep" url="wkeep.html"/>
 <mapID target="wrev" url="wrev.html"/>
-<mapID target="xcorr1" url="xcorr1.html"/>
 <mapID target="xcorr2" url="xcorr2.html"/>
-<mapID target="xcov1" url="xcov1.html"/>
 <mapID target="yulewalker" url="yulewalker.html"/>
 <mapID target="zerocrossing" url="zerocrossing.html"/>
 <mapID target="zp2sos" url="zp2sos.html"/>

@@ -42,24 +42,28 @@
 
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">type:</span>
-      <dd><p class="para">convolution type.</p></dd></dt>
+      <dd><p class="para">convolution type.</p>
+      <p class="para">* 1 or &#0034;1&#0034; for 1D convolution.</p>
+      <p class="para">* 2 or &#0034;2&#0034; for 2D convolution.</p></dd></dt>
    <dt><span class="term">x:</span>
       <dd><p class="para">Signal vector or matrix.</p></dd></dt>
    <dt><span class="term">f:</span>
       <dd><p class="para">FIR filter coefficients.</p></dd></dt>
    <dt><span class="term">shape:</span>
-      <dd><p class="para">Shape.</p></dd></dt></dl></div>
+      <dd><p class="para">* &#0034;full&#0034;, computes the full one/two-dimensional convolution. It is the default value.</p>
+      <p class="para">* &#0034;same&#0034;,  computes the central part of the convolution of the same size as x.</p>
+      <p class="para">* &#0034;valid&#0034;,  computes the convolution parts without the zero-padding of x.</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This is an Octave function.
-It performs 1D or 2D convolution between the signal x and the filter coefficients f.</p></div>
+   <p class="para">It performs 1D or 2D convolution between the signal x and the filter coefficients f.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">a</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">1</span> <span class="scilabnumber">2</span> <span class="scilabnumber">3</span> <span class="scilabnumber">4</span> <span class="scilabnumber">5</span><span class="scilabopenclose">]</span>
-<span class="scilabid">b</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">7</span> <span class="scilabnumber">8</span> <span class="scilabnumber">9</span> <span class="scilabnumber">10</span><span class="scilabopenclose">]</span>
-<span class="scilabid">wconv</span><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabid">a</span><span class="scilabdefault">,</span><span class="scilabid">b</span><span class="scilabopenclose">)</span>
-<span class="scilabid">ans</span> <span class="scilaboperator">=</span>
-<span class="scilabnumber">7</span>    <span class="scilabnumber">22</span>    <span class="scilabnumber">46</span>    <span class="scilabnumber">80</span>   <span class="scilabnumber">114</span>   <span class="scilabnumber">106</span>    <span class="scilabnumber">85</span>    <span class="scilabnumber">50</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">a</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">1</span> <span class="scilabnumber">2</span> <span class="scilabnumber">3</span> <span class="scilabnumber">4</span> <span class="scilabnumber">5</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabid">b</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">7</span> <span class="scilabnumber">8</span> <span class="scilabnumber">9</span> <span class="scilabnumber">10</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabid">wconv</span><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span> <span class="scilabid">a</span><span class="scilabdefault">,</span> <span class="scilabid">b</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+ <div class="refsection"><h3 class="title">Authors</h3>
+    <ul class="itemizedlist"><li class="member">Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</li></ul></div>
     <br />
 
     <div class="manualnavbar">

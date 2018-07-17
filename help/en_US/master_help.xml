@@ -275,9 +275,7 @@
 <!ENTITY afb58a7de5e7847a320401c512a9d4c0f SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/window.xml">
 <!ENTITY ad5aae1dbc315130955f15355d8618233 SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/wkeep.xml">
 <!ENTITY aaac8b5baba982f5f806e3558cd1c5fdb SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/wrev.xml">
-<!ENTITY aa119059ef326431f16a2a5aeceeca143 SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/xcorr1.xml">
 <!ENTITY ad293147874bb42bdd7d9993040a7bb17 SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/xcorr2.xml">
-<!ENTITY a09ec393002abe105fafa40e9a3e98455 SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/xcov1.xml">
 <!ENTITY a1debcfcde2e0ef20e5995512e18d360c SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/yulewalker.xml">
 <!ENTITY acbc7867e3d978227742bffbca24fe655 SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/zerocrossing.xml">
 <!ENTITY a53a5fd64ec09dc52eddcd89c997c4927 SYSTEM "/home/sonu/Desktop/FOSSEE-Signal-Processing-Toolbox-master/help/en_US/zp2sos.xml">
@@ -574,9 +572,7 @@
 &afb58a7de5e7847a320401c512a9d4c0f;
 &ad5aae1dbc315130955f15355d8618233;
 &aaac8b5baba982f5f806e3558cd1c5fdb;
-&aa119059ef326431f16a2a5aeceeca143;
 &ad293147874bb42bdd7d9993040a7bb17;
-&a09ec393002abe105fafa40e9a3e98455;
 &a1debcfcde2e0ef20e5995512e18d360c;
 &acbc7867e3d978227742bffbca24fe655;
 &a53a5fd64ec09dc52eddcd89c997c4927;
