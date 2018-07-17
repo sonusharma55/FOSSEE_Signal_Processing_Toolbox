@@ -33,27 +33,25 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">dctmtx</h1>
-    <p class="refpurpose"></p></div>
+    <p class="refpurpose">Return the DCT transformation matrix of size N-by-N.</p></div>
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
-   <div class="synopsis"><pre><span class="default">[</span><span class="default">y</span><span class="default">]=</span><span class="functionid">dctmtx</span><span class="default">(</span><span class="default">n</span><span class="default">)</span></pre></div></div>
+   <div class="synopsis"><pre><span class="default">T</span><span class="default"> = </span><span class="functionid">dctmtx</span><span class="default">(</span><span class="default">n</span><span class="default">)</span></pre></div></div>
 
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">n:</span>
       <dd><p class="para">Real scalar integer greater than or equal to 1</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This is an Octave function
-dctmtx(n) returns a Discrete cosine transform matrix of order n-by-n. It is useful for jpeg image compression. D*A is the DCT of the columns of A and D&#0039;*A is the inverse DCT of the columns of A (when A is n-by-n).</p></div>
+   <p class="para">dctmtx(n) returns a Discrete cosine transform matrix of order n-by-n. It is useful for jpeg image compression. D*A is the DCT of the columns of A and D&#0039;*A is the inverse DCT of the columns of A (when A is n-by-n).</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabnumber">1.</span>    <span class="scilabid">dctmtx</span><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilabopenclose">)</span>
-<span class="scilabid">ans</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">0.70711</span>   <span class="scilabnumber">0.70711</span><span class="scilabdefault">;</span>   <span class="scilabnumber">0.70711</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.70711</span><span class="scilabopenclose">]</span>
-<span class="scilabnumber">2.</span>    <span class="scilabid">dctmtx</span><span class="scilabopenclose">(</span><span class="scilabnumber">3</span><span class="scilabopenclose">)</span>
-<span class="scilabid">ans</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">5.7735e-01</span>   <span class="scilabnumber">5.7735e-01</span>   <span class="scilabnumber">5.7735e-01</span><span class="scilabdefault">;</span>
-<span class="scilabnumber">7.0711e-01</span>   <span class="scilabnumber">4.9996e-17</span>  <span class="scilaboperator">-</span><span class="scilabnumber">7.0711e-01</span><span class="scilabdefault">;</span>
-<span class="scilabnumber">4.0825e-01</span>  <span class="scilaboperator">-</span><span class="scilabnumber">8.1650e-01</span>   <span class="scilabnumber">4.0825e-01</span><span class="scilabopenclose">]</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">n</span><span class="scilaboperator">=</span> <span class="scilabnumber">3</span><span class="scilabdefault">;</span>
+<span class="scilabid">T</span> <span class="scilaboperator">=</span> <span class="scilabid">dctmtx</span><span class="scilabopenclose">(</span><span class="scilabid">n</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Modified by :</h3>
+<ul class="itemizedlist"><li class="member">Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</li></ul></div>
     <br />
 
     <div class="manualnavbar">

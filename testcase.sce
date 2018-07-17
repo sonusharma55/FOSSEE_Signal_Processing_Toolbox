@@ -697,6 +697,25 @@ else
 	disp("chirp Test failed")
 end
 
+/////////Test case for       dftmtx                 //////////
+d = dftmtx(4);
+if(d == [1 1 1 1; 1 -%i -1 %i; 1 -1 1 -1; 1 %i -1 -%i]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("dftmtx Test failed")
+end
+
+/////////Test case for       dctmtx                 //////////
+T = dctmtx(3);
+T = round(T*10000)/10000;
+if(T == [0.5774  0.5774  0.5774; 0.7071  0  -0.7071; 0.4082 -0.8165 0.4082]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("dctmtx Test failed")
+end
+
 /////////////////////////////////////////////
 
 /////////////////////////////////////////////

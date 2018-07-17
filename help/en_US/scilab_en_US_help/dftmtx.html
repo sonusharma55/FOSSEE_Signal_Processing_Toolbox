@@ -33,25 +33,24 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">dftmtx</h1>
-    <p class="refpurpose"></p></div>
+    <p class="refpurpose">Computes n-by-n Discrete Fourier transformation matrix.</p></div>
 
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
-   <div class="synopsis"><pre><span class="default">[</span><span class="default">d</span><span class="default">]=</span><span class="functionid">dftmtx</span><span class="default">(</span><span class="default">n</span><span class="default">)</span></pre></div></div>
+   <div class="synopsis"><pre><span class="default">d</span><span class="default"> = </span><span class="functionid">dftmtx</span><span class="default">(</span><span class="default">n</span><span class="default">)</span></pre></div></div>
 
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">n:</span>
       <dd><p class="para">Real positive scalar number</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This is an Octave function
-This fuction gives a complex matrix of values whose product with a vector produces the discrete Fourier transform. This can also be achieved by directly using the fft function i.e. y=fft(x) is same as y=A*x where A=dftmtx(n).</p></div>
+   <p class="para">This fuction gives a complex matrix of values whose product with a vector produces the discrete Fourier transform. This can also be achieved by directly using the fft function i.e. y=fft(x) is same as y=A*x where A=dftmtx(n).</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabnumber">1.</span>    <span class="scilabid">dftmtx</span><span class="scilabopenclose">(</span><span class="scilabnumber">3</span><span class="scilabopenclose">)</span>
-<span class="scilabid">ans</span> <span class="scilaboperator">=</span>   <span class="scilabnumber">1.00000</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.00000</span><span class="scilabid">i</span>   <span class="scilabnumber">1.00000</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.00000</span><span class="scilabid">i</span>   <span class="scilabnumber">1.00000</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.00000</span><span class="scilabid">i</span>
-<span class="scilabnumber">1.00000</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.00000</span><span class="scilabid">i</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.50000</span> <span class="scilaboperator">-</span> <span class="scilabnumber">0.86603</span><span class="scilabid">i</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.50000</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.86603</span><span class="scilabid">i</span>
-<span class="scilabnumber">1.00000</span> <span class="scilaboperator">-</span> <span class="scilabnumber">0.00000</span><span class="scilabid">i</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.50000</span> <span class="scilaboperator">+</span> <span class="scilabnumber">0.86603</span><span class="scilabid">i</span>  <span class="scilaboperator">-</span><span class="scilabnumber">0.50000</span> <span class="scilaboperator">-</span> <span class="scilabnumber">0.86603</span><span class="scilabid">i</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">d</span> <span class="scilaboperator">=</span> <span class="scilabid">dftmtx</span><span class="scilabopenclose">(</span><span class="scilabnumber">4</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Modified by :</h3>
+<ul class="itemizedlist"><li class="member">Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</li></ul></div>
     <br />
 
     <div class="manualnavbar">
