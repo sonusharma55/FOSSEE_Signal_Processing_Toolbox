@@ -682,6 +682,21 @@ else
 	disp("wconv Test failed")
 end
 
+/////////Test case for       chirp                 //////////
+t = [4,3,2,1];
+f0 = 4;
+t1 = 5;
+f1 = 0.9;
+form = "quadratic";
+y = chirp(t, f0, t1, f1, form);
+y = round(y*10000)/10000;
+if(y == [-0.6113    0.7459  -0.4854    0.9665]) 
+           test_pass=[test_pass,1]
+else
+	test_pass=[test_pass,0]
+	disp("chirp Test failed")
+end
+
 /////////////////////////////////////////////
 
 /////////////////////////////////////////////

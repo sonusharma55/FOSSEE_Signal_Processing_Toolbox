@@ -33,44 +33,47 @@
 
     <br /><br />
     <div class="refnamediv"><h1 class="refname">chirp</h1>
-    <p class="refpurpose">This function evaluates a chirp signal at time t.</p></div>
-
+    <p class="refpurpose">Chirp signal at time t.</p></div>
 
 <div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
    <div class="synopsis"><pre><span class="default">y</span><span class="default"> = </span><span class="functionid">chirp</span><span class="default">(</span><span class="default">t</span><span class="default">)</span>
 <span class="default">y</span><span class="default"> = </span><span class="functionid">chirp</span><span class="default">(</span><span class="default">t</span><span class="default">, </span><span class="default">f0</span><span class="default">)</span>
 <span class="default">y</span><span class="default"> = </span><span class="functionid">chirp</span><span class="default">(</span><span class="default">t</span><span class="default">, </span><span class="default">f0</span><span class="default">, </span><span class="default">t1</span><span class="default">)</span>
 <span class="default">y</span><span class="default"> = </span><span class="functionid">chirp</span><span class="default">(</span><span class="default">t</span><span class="default">, </span><span class="default">f0</span><span class="default">, </span><span class="default">t1</span><span class="default">, </span><span class="default">f1</span><span class="default">)</span>
-<span class="default">y</span><span class="default"> = </span><span class="functionid">chirp</span><span class="default">(</span><span class="default">t</span><span class="default">, </span><span class="default">f0</span><span class="default">, </span><span class="default">t1</span><span class="default">, </span><span class="default">f1</span><span class="default">, </span><span class="default">frm</span><span class="default">)</span>
-<span class="default">y</span><span class="default"> = </span><span class="functionid">chirp</span><span class="default">(</span><span class="default">t</span><span class="default">, </span><span class="default">f0</span><span class="default">, </span><span class="default">t1</span><span class="default">, </span><span class="default">f1</span><span class="default">, </span><span class="default">frm</span><span class="default">, </span><span class="default">phse</span><span class="default">)</span></pre></div></div>
+<span class="default">y</span><span class="default"> = </span><span class="functionid">chirp</span><span class="default">(</span><span class="default">t</span><span class="default">, </span><span class="default">f0</span><span class="default">, </span><span class="default">t1</span><span class="default">, </span><span class="default">f1</span><span class="default">, </span><span class="default">form</span><span class="default">)</span>
+<span class="default">y</span><span class="default"> = </span><span class="functionid">chirp</span><span class="default">(</span><span class="default">t</span><span class="default">, </span><span class="default">f0</span><span class="default">, </span><span class="default">t1</span><span class="default">, </span><span class="default">f1</span><span class="default">, </span><span class="default">form</span><span class="default">, </span><span class="default">phase</span><span class="default">)</span></pre></div></div>
 
 <div class="refsection"><h3 class="title">Parameters</h3>
    <dl><dt><span class="term">t:</span>
-      <dd><p class="para">vector</p></dd></dt>
+      <dd><p class="para">a vector of times to evaluate the chirp signal.</p></dd></dt>
    <dt><span class="term">f0:</span>
-      <dd><p class="para"></p></dd></dt>
+      <dd><p class="para">the frequency at t=0. [default value = 0 Hz]</p></dd></dt>
    <dt><span class="term">t1:</span>
-      <dd><p class="para"></p></dd></dt>
+      <dd><p class="para">some intermediate time. [default value = 1 sec]</p></dd></dt>
    <dt><span class="term">f1:</span>
-      <dd><p class="para"></p></dd></dt>
-   <dt><span class="term">frm:</span>
-      <dd><p class="para">string value, takes in &#0034;linear&#0034;, &#0034;quadratic&#0034;, &#0034;logarithmic&#0034;</p></dd></dt>
-   <dt><span class="term">phse:</span>
-      <dd><p class="para"></p></dd></dt></dl></div>
+      <dd><p class="para">frequency at t=t1. [default value = 100 Hz]</p></dd></dt>
+   <dt><span class="term">form:</span>
+      <dd><p class="para">string value, takes in &#0034;linear&#0034;, &#0034;quadratic&#0034;, &#0034;logarithmic&#0034;. [default value = &#0034;linear&#0034;]</p></dd></dt>
+   <dt><span class="term">phase:</span>
+      <dd><p class="para">phase shift at t=0. [default value = 0]</p></dd></dt>
+   <dt><span class="term">y:</span>
+      <dd><p class="para">chirp signal value corresponding to t.</p></dd></dt></dl></div>
 
 <div class="refsection"><h3 class="title">Description</h3>
-   <p class="para">This is an Octave function.
-This function evaluates a chirp signal at time t. A chirp signal is a frequency swept cosine wave.
-The first argument is a vector of times to evaluate the chirp signal, second argument is the frequency at t=0, third argument is time t1 and fourth argument is frequency at t1.
+   <p class="para">This function evaluates a chirp signal at time t. A chirp signal is a frequency swept cosine wave.</p>
+<p class="para">The first argument is a vector of times to evaluate the chirp signal, second argument is the frequency at t=0, third argument is time t1 and fourth argument is frequency at t1.
 The fifth argument is the form which takes in values &#0034;linear&#0034;, &#0034;quadratic&#0034; and &#0034;logarithmic&#0034;, the sixth argument gives the phase shift at t=0.</p></div>
 
 <div class="refsection"><h3 class="title">Examples</h3>
-   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">chirp</span><span class="scilabopenclose">(</span><span class="scilabopenclose">[</span><span class="scilabnumber">4</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabopenclose">]</span><span class="scilabdefault">,</span><span class="scilabnumber">4</span><span class="scilabdefault">,</span><span class="scilabnumber">5</span><span class="scilabdefault">,</span><span class="scilabnumber">0.9</span><span class="scilabopenclose">)</span>
-<span class="scilabid">ans</span>  <span class="scilaboperator">=</span>
-<span class="scilabid">column</span> <span class="scilabnumber">1</span> <span class="scilabid">to</span> <span class="scilabnumber">3</span>
-<span class="scilabnumber">0.9685832</span>    <span class="scilabnumber">0.2486899</span>    <span class="scilabnumber">0.0627905</span>
-<span class="scilabid">column</span> <span class="scilabnumber">4</span>
-<span class="scilaboperator">-</span> <span class="scilabnumber">0.3681246</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">t</span> <span class="scilaboperator">=</span> <span class="scilabopenclose">[</span><span class="scilabnumber">4</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabopenclose">]</span><span class="scilabdefault">;</span>
+<span class="scilabid">f0</span> <span class="scilaboperator">=</span> <span class="scilabnumber">4</span><span class="scilabdefault">;</span>
+<span class="scilabid">t1</span> <span class="scilaboperator">=</span> <span class="scilabnumber">5</span><span class="scilabdefault">;</span>
+<span class="scilabid">f1</span> <span class="scilaboperator">=</span> <span class="scilabnumber">0.9</span><span class="scilabdefault">;</span>
+<span class="scilabid">form</span> <span class="scilaboperator">=</span> <span class="scilabstring">&#0034;</span><span class="scilabstring">quadratic</span><span class="scilabstring">&#0034;</span><span class="scilabdefault">;</span>
+<span class="scilabid">y</span> <span class="scilaboperator">=</span> <span class="scilabid">chirp</span><span class="scilabopenclose">(</span><span class="scilabid">t</span><span class="scilabdefault">,</span> <span class="scilabid">f0</span><span class="scilabdefault">,</span> <span class="scilabid">t1</span><span class="scilabdefault">,</span> <span class="scilabid">f1</span><span class="scilabdefault">,</span> <span class="scilabid">form</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Modified by :</h3>
+<ul class="itemizedlist"><li class="member">Sonu Sharma, RGIT Mumbai (fellow at FOSSEE, IIT Bombay)</li></ul></div>
     <br />
 
     <div class="manualnavbar">
